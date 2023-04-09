@@ -23,7 +23,7 @@
       @scrollToTop="$emit('scrollToTop')"
       @remove="$emit('remove', $event)"
     >
-      <template v-slot:user-avatar="scopedProps">
+      <template v-if="messageAvatars" v-slot:user-avatar="scopedProps">
         <slot name="user-avatar" :user="scopedProps.user" :message="scopedProps.message"> </slot>
       </template>
       <template v-slot:text-message-body="scopedProps">
@@ -136,6 +136,10 @@ export default {
     confirmationDeletionMessage: {
       type: String,
       required: true
+    },
+    messageAvatars: {
+      type: Boolean,
+      default: true,
     }
   },
   data() {
