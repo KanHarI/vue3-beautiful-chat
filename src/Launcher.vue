@@ -30,6 +30,7 @@
       :colors="colors"
       :always-scroll-to-bottom="alwaysScrollToBottom"
       :message-styling="messageStyling"
+      :message-avatars="messageAvatars"
       @close="close"
       @scrollToTop="$emit('scrollToTop')"
       @onType="$emit('onType', $event)"
@@ -235,6 +236,10 @@ export default {
     disableUserListToggle: {
       type: Boolean,
       default: false
+    },
+    messageAvatars: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
